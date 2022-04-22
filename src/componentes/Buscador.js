@@ -22,13 +22,13 @@ class Buscador extends React.Component {
     render() {        
         return( 
             <form onSubmit = {this.obtenerDatos}> 
-                <div className="row">                                                
-                    <div className="form-group col-md-9">
-                        <input ref = {this.busquedaRef} type="number" min="1" max="200" className="form-control 
-                        form-control-lg" placeholder="ID del Actor" />
+                <div className='row justify-content-center'>                                                
+                    <div className="form-group col-md-5">
+                        <input ref = {this.busquedaRef} type="number" min="1" max="200" className="form-control" 
+                        placeholder="ID del Actor" />
                     </div>
-                    <div className="form-group col-md-3">
-                        <input type="submit" className="btn btn-lg btn-success btn-block" 
+                    <div className="form-group col-md-2">
+                        <input type="submit" className="btn btn-danger btn-block" 
                         value="Buscar" />
                     </div>                
                 </div>

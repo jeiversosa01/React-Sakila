@@ -8,14 +8,15 @@ class App extends React.Component {
   state = {
     id : '',
     actor : '',
-    peliculas : []
+    peliculas : [],       
   }
 
   consultarApiActor = () => {
 
-    const id = this.state.id;
-    const url = `http://localhost:7070/actor/listar/${id}`
+    const id = this.state.id;    
+    const url = `http://localhost:7070/actor/listar/${id}`    
 
+    // Retorna el link en Json
     fetch(url)
 
     .then(respuesta => respuesta.json())
@@ -25,7 +26,7 @@ class App extends React.Component {
 
   consultarApiPeliculas = () => {
 
-    const id = this.state.id;    
+    const id = this.state.id;     
     const url = `http://localhost:7070/film/listar/actor/${id}`;
     
     // Retorna el link en Json
@@ -38,7 +39,7 @@ class App extends React.Component {
 
   datosBusqueda = (id) => {    
     this.setState({
-      id : id
+      id : id,      
     }, () => {
       this.consultarApiActor();
       this.consultarApiPeliculas();      
@@ -49,17 +50,17 @@ class App extends React.Component {
     return(
       <div className="app container">
         <div className="jumbotron">
-          <p className="lead text-center">Busqueda de Películas por Actor</p>
+          <h1 className="display-5  text-center"><strong><p className="text-info">Busqueda de Películas por ID Actor</p></strong></h1>
           <Buscador
             datosBusqueda = {this.datosBusqueda}          
           />
-        </div>        
-          <Datos 
-            actor = {this.state.actor}
-          />        
-          <Tabla
-            peliculas = {this.state.peliculas}
-          />
+        </div>
+        <Datos 
+          actor = {this.state.actor}
+        />     
+        <Tabla
+          peliculas = {this.state.peliculas}          
+        />
       </div>
     );
   }

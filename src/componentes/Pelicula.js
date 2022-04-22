@@ -2,11 +2,11 @@ import React from "react";
 
 const Pelicula = (props) => {
 
-    const {filmId, title, description} = props.pelicula;
-
+    const {title, description} = props.pelicula;    
+    
     return (
-        <tr className="table-dark">
-            <td>{filmId}</td>
+        <tr className="table-dark text-center">
+            <td>#</td>
             <td>{title}</td>
             <td>{description}</td>
         </tr>

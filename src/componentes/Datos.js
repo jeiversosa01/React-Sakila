@@ -1,5 +1,5 @@
 import React from "react";
-import NombreApellido from "./NombreApellido";
+import Nombre from "./Nombre";
 
 class Datos extends React.Component {
 
@@ -10,22 +10,14 @@ class Datos extends React.Component {
         if (actor.length === 0) return null;
 
         return(
-            <table className="table table-hover">
-                <thead>
-                    <tr className="table-danger">
-                        <th scope="col">NOMBRE</th>
-                        <th scope="col">APELLIDO</th>
-                    </tr>
-                </thead>
-                <tbody>  
-                    {actor.map(actor => (
-                        <NombreApellido
-                            key = {actor.actorId}                            
-                            actor = {actor}
-                        />
-                    ))}
-                </tbody>
-            </table>
+            <React.Fragment>
+                {actor.map(actor => (
+                    <Nombre
+                        key = {actor.actorId}                            
+                        actor = {actor}
+                    />
+                ))}
+            </React.Fragment>
         );
     }
 
